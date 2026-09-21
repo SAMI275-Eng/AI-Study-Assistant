@@ -1,0 +1,113 @@
+.home {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+.home h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #1f2937;
+}
+
+.home > p {
+  color: #6b7280;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.home button {
+  padding: 12px 22px;
+  margin-right: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.home button:hover {
+  background: #1d4ed8;
+}
+.home-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  margin-right: 12px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background: #1d4ed8;
+}
+
+.home h2 {
+  margin-top: 45px;
+  color: #1f2937;
+}
+
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.subjects p {
+  padding: 25px;
+  margin: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.continue {
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 900px) {
+  .home {
+    padding: 30px;
+  }
+
+  .subjects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    padding: 20px;
+  }
+
+  .home h1 {
+    font-size: 28px;
+  }
+
+  .home > p {
+    font-size: 16px;
+  }
+
+  .home button {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  .subjects {
+    grid-template-columns: 1fr;
+  }
+
+  .continue {
+    padding: 20px;
+  }
+}
+
