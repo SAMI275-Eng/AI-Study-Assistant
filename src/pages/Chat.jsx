@@ -41,10 +41,6 @@ function Chat({
     if (text.includes("python")) {
       return "Python is a high-level programming language.";
     }
-    if (text.includes("mobina")) {
-      return "she is crazy girl in the world from iran and sami's....😉😇.";
-    }
-
     if (text.includes("javascript")) {
       return "JavaScript is a programming language used in browsers and on servers.";
     }
