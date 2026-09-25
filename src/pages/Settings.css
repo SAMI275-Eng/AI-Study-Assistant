@@ -1,195 +1,685 @@
-body{
-    background-color: #243142;
-}
-/* Settings Page */
+
+/* =========================================
+   MODERN AI SETTINGS
+========================================= */
+
+
 .Settings-main {
-    width: min(900px, 92%);
-    margin: 40px auto;
-    padding: 30px;
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 44px 28px 70px;
+  box-sizing: border-box;
 
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background: #f5f7fb;
+  color: #172033;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+  overflow-x: hidden;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 
-/* Every setting section */
-.Settings-main > div {
-    padding: 22px;
-    border: 1px solid #e5e7eb;
-    border-radius: 14px;
-    background: #f9fafb;
+/* =========================================
+   HEADER
+========================================= */
+
+.settings-header {
+  margin-bottom: 38px;
+}
+
+.settings-header h1 {
+  margin: 0;
+
+  font-size: 34px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+
+  color: #111827;
+}
+
+.settings-header p {
+  max-width: 650px;
+  margin: 10px 0 0;
+
+  color: #6b7280;
+
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 
-/* Headings */
-.Settings-main h3 {
-    margin: 0 0 12px;
-    font-size: 17px;
-    color: #1f2937;
+/* =========================================
+   SECTION
+========================================= */
+
+.settings-section {
+  margin-bottom: 34px;
+}
+
+.settings-section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 0 0 13px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #64748b;
+
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
 }
 
 
-/* Labels */
-.Settings-main label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* Small line before section title */
 
-    font-size: 15px;
-    color: #374151;
-    cursor: pointer;
+.settings-section > h2::before {
+  content: "";
+
+  width: 4px;
+  height: 17px;
+
+  border-radius: 10px;
+
+  background: #6366f1;
 }
 
 
-/* Checkboxes */
-.Settings-main input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
+/* =========================================
+   SETTING CARD
+========================================= */
 
+.setting-card {
+  position: relative;
 
-/* Select boxes */
-.Settings-main select {
-    width: 100%;
-    padding: 11px 12px;
+  width: 100%;
+  min-width: 0;
 
-    border: 1px solid #d1d5db;
-    border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    background: white;
-    color: #374151;
+  gap: 25px;
 
-    font-size: 15px;
-    cursor: pointer;
-    outline: none;
-}
+  margin-bottom: 9px;
+  padding: 19px 21px;
 
+  box-sizing: border-box;
 
-.Settings-main select:focus {
-    border-color: #6366f1;
-}
+  background: rgba(255, 255, 255, 0.95);
 
+  border: 1px solid #e7eaf0;
+  border-radius: 16px;
 
-/* Buttons section */
-.clear-H-R {
-    grid-column: 1 / -1;
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.035),
+    0 1px 2px rgba(15, 23, 42, 0.03);
 
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-}
-
-
-/* Buttons */
-.clear-H-R button {
-    border: none;
-    border-radius: 9px;
-
-    padding: 11px 18px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-}
-
-
-/* Clear History */
-.Clear-History {
-    background: #e5e7eb;
-    color: #374151;
-}
-
-
-/* Reset */
-.Reset {
-    background: #ef4444;
-    color: white;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 
 /* Hover */
+
+.setting-card:hover {
+  transform: translateY(-1px);
+
+  border-color: #d9dded;
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.07),
+    0 2px 5px rgba(15, 23, 42, 0.03);
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.setting-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.setting-info h3 {
+  margin: 0 0 5px;
+
+  color: #1f2937;
+
+  font-size: 15px;
+  font-weight: 650;
+
+  line-height: 1.4;
+}
+
+.setting-info p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: #7b8494;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.setting-card select {
+  width: 175px;
+  min-width: 145px;
+  max-width: 100%;
+
+  padding: 10px 36px 10px 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfe3ea;
+  border-radius: 10px;
+
+  background-color: #f8fafc;
+  color: #263247;
+
+  font-size: 13px;
+  font-weight: 550;
+
+  outline: none;
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.setting-card select:hover {
+  background: #ffffff;
+  border-color: #cfd5e1;
+}
+
+.setting-card select:focus {
+  background: #ffffff;
+
+  border-color: #818cf8;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================
+   MODERN SWITCH
+========================================= */
+
+.switch {
+  position: relative;
+
+  display: inline-block;
+
+  width: 50px;
+  min-width: 50px;
+  height: 28px;
+
+  flex-shrink: 0;
+}
+
+.switch input {
+  position: absolute;
+
+  opacity: 0;
+
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+
+  inset: 0;
+
+  background: #d7dce5;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.slider::before {
+  content: "";
+
+  position: absolute;
+
+  width: 22px;
+  height: 22px;
+
+  left: 3px;
+  top: 3px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 2px 5px rgba(15, 23, 42, 0.18);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.switch input:checked + .slider {
+  background: #6366f1;
+
+  box-shadow:
+    0 3px 10px rgba(99, 102, 241, 0.25);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+
+/* =========================================
+   CLEAR HISTORY
+========================================= */
+
+.danger-card {
+  border-color: #f1d9dc;
+}
+
+.danger-card:hover {
+  border-color: #e9bfc4;
+}
+
+.Clear-History {
+  flex-shrink: 0;
+
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #fff1f2;
+  color: #dc2626;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
 .Clear-History:hover {
-    background: #d1d5db;
+  background: #dc2626;
+  color: white;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   RESET BUTTON
+========================================= */
+
+.reset-section {
+  margin-top: 42px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.Reset {
+  width: 100%;
+
+  padding: 13px 18px;
+
+  border: 1px solid #dfe3ea;
+  border-radius: 11px;
+
+  background: white;
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .Reset:hover {
-    background: #dc2626;
+  background: #f8fafc;
+
+  border-color: #cbd5e1;
+
+  color: #1e293b;
 }
 
 
-/* Responsive - tablet */
-@media (max-width: 700px) {
-
-    .Settings-main {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .clear-H-R {
-        grid-column: auto;
-        justify-content: stretch;
-    }
-
-    .clear-H-R button {
-        flex: 1;
-    }
-}
-
-
-/* Responsive - phone */
-@media (max-width: 450px) {
-
-    .Settings-main {
-        width: 94%;
-        margin: 20px auto;
-        padding: 14px;
-
-        gap: 14px;
-    }
-
-    .Settings-main > div {
-        padding: 17px;
-    }
-
-    .clear-H-R {
-        flex-direction: column;
-    }
-
-    .clear-H-R button {
-        width: 100%;
-    }
-}
+/* =========================================
+   DARK MODE
+========================================= */
 
 .Settings-main.dark {
-    background: #1f2937;
+  background: #0b1120;
+  color: #f8fafc;
 }
 
-.Settings-main.dark > div {
-    background: #111827;
-    border-color: #374151;
+.Settings-main.dark .settings-header h1 {
+  color: #f8fafc;
 }
 
-.Settings-main.dark h3 {
-    color: #f9fafb;
+.Settings-main.dark .settings-header p {
+  color: #94a3b8;
 }
 
-.Settings-main.dark label {
-    color: #d1d5db;
+.Settings-main.dark .settings-section > h2 {
+  color: #94a3b8;
 }
 
-.Settings-main.dark p {
-    color: #f9fafb;
+.Settings-main.dark .setting-card {
+  background: #111827;
+
+  border-color: #1f2937;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.18);
 }
 
-.Settings-main.dark select {
-    background: #1f2937;
-    color: #f9fafb;
-    border-color: #4b5563;
+.Settings-main.dark .setting-card:hover {
+  border-color: #334155;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
 }
+
+.Settings-main.dark .setting-info h3 {
+  color: #f1f5f9;
+}
+
+.Settings-main.dark .setting-info p {
+  color: #94a3b8;
+}
+
+.Settings-main.dark .setting-card select {
+  background: #0f172a;
+
+  border-color: #334155;
+
+  color: #e2e8f0;
+}
+
+.Settings-main.dark .setting-card select:hover {
+  background: #111827;
+
+  border-color: #475569;
+}
+
+.Settings-main.dark .setting-card select:focus {
+  border-color: #818cf8;
+}
+
+.Settings-main.dark .slider {
+  background: #334155;
+}
+
+.Settings-main.dark .danger-card {
+  border-color: #4c252b;
+}
+
+.Settings-main.dark .Clear-History {
+  background: #35161a;
+  color: #f87171;
+}
+
+.Settings-main.dark .Clear-History:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.Settings-main.dark .reset-section {
+  border-color: #1f2937;
+}
+
+.Settings-main.dark .Reset {
+  background: #111827;
+
+  border-color: #334155;
+
+  color: #cbd5e1;
+}
+
+.Settings-main.dark .Reset:hover {
+  background: #1e293b;
+
+  border-color: #475569;
+
+  color: white;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .Settings-main {
+    max-width: 100%;
+
+    padding: 34px 20px 55px;
+  }
+
+  .settings-header {
+    margin-bottom: 30px;
+  }
+
+  .settings-header h1 {
+    font-size: 29px;
+  }
+
+  .setting-card {
+    padding: 18px;
+
+    gap: 18px;
+  }
+
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .Settings-main {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 27px 15px 45px;
+
+    overflow-x: hidden;
+  }
+
+  .settings-header {
+    margin-bottom: 27px;
+  }
+
+  .settings-header h1 {
+    font-size: 26px;
+    letter-spacing: -0.4px;
+  }
+
+  .settings-header p {
+    font-size: 14px;
+  }
+
+  .settings-section {
+    margin-bottom: 25px;
+  }
+
+  .settings-section > h2 {
+    font-size: 13px;
+  }
+
+  .setting-card {
+    padding: 16px;
+
+    gap: 15px;
+
+    border-radius: 14px;
+  }
+
+  .setting-info h3 {
+    font-size: 14px;
+  }
+
+  .setting-info p {
+    font-size: 12.5px;
+  }
+
+  .setting-card select {
+    width: 150px;
+    min-width: 120px;
+
+    padding: 9px 30px 9px 10px;
+
+    font-size: 12px;
+  }
+
+  .switch {
+    width: 47px;
+    min-width: 47px;
+    height: 27px;
+  }
+
+  .slider::before {
+    width: 21px;
+    height: 21px;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+
+  .Clear-History {
+    padding: 9px 12px;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 430px) {
+
+  .Settings-main {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .settings-header h1 {
+    font-size: 23px;
+  }
+
+  .settings-header p {
+    font-size: 13px;
+  }
+
+  /*
+     Important:
+     The card becomes vertical only
+     when the screen is very narrow.
+     This prevents Pashto/Dari text
+     from making the page wider.
+  */
+
+  .setting-card {
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 15px;
+  }
+
+  .setting-info {
+    width: 100%;
+  }
+
+  .setting-card select {
+    width: 100%;
+  }
+
+  .setting-card .switch {
+    align-self: flex-end;
+  }
+
+  .Clear-History {
+    width: 100%;
+  }
+
+  .Reset {
+    padding: 12px;
+  }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL PHONES
+========================================= */
+
+@media (max-width: 340px) {
+
+  .Settings-main {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .settings-header h1 {
+    font-size: 21px;
+  }
+
+  .setting-card {
+    padding: 13px;
+  }
+
+}
+

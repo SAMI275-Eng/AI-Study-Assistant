@@ -1,32 +1,77 @@
+
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-
-function Home() {
+function Home({language,translations,darkMode}) {
   return (
-    <div className="home">
-      <h1>AI Study Assistant</h1>
-      <p>Learn smarter. Practice better.</p>
+    <div className={darkMode ? "home dark" : "home"}>
 
-      <Link to="/chat" className="home-btn">Ask AI</Link>
-      <button>Quiz</button>
-      
+      <div className="home-header">
+        <div>
+          <h1>{translations[language].title}</h1>
+          <p>{translations[language].subtitle}</p>
+        </div>
+      </div>
 
-               <h2>Your Subjects</h2>
+      <div className="hero-card">
+        <div>
+          <h2>{translations[language].ready}</h2>
+          <p>Ask your AI tutor anything about your studies.</p>
+        </div>
+
+        <Link to="/chat" className="home-btn">
+          {translations[language].askAI} →
+        </Link>
+      </div>
+
+      <h2>{translations[language].subjects}</h2>
 
       <div className="subjects">
-        <p>React</p>
-                   <p>JavaScript</p>
-        <p>Python</p>
-        <p>HTML & CSS</p>
+
+        <div className="subject-card">
+          <h3>⚛ React</h3>
+          <p>Build modern user interfaces.</p>
+        </div>
+
+        <div className="subject-card">
+          <h3>🟨 JavaScript</h3>
+          <p>Learn programming for the web.</p>
+        </div>
+
+        <div className="subject-card">
+          <h3>🐍 Python</h3>
+          <p>Learn programming and problem solving.</p>
+        </div>
+
+        <div className="subject-card">
+          <h3>🌐 HTML & CSS</h3>
+          <p>Build and design web pages.</p>
+        </div>
+
       </div>
 
-    <h2>Continue Learning</h2>
+      <h2>Continue Learning</h2>
 
       <div className="continue">
-        <p>React → useEffect</p>
-        <p>Progress: 60%</p>
+
+        <div className="continue-info">
+          <h3>React → useEffect</h3>
+          <p>You're making good progress.</p>
+        </div>
+
+        <div className="progress-section">
+          <div className="progress-top">
+            <span>Progress</span>
+            <span>60%</span>
+          </div>
+
+          <div className="progress-bar">
+            <div className="progress-fill"></div>
+          </div>
+        </div>
+
       </div>
+
     </div>
   );
 }
