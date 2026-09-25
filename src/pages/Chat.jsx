@@ -34,8 +34,8 @@ function Chat({
     if (text.includes("react")) {
       return "React is a JavaScript library for building user interfaces.";
     }
-    if (text.includes("sami" || "samiullah")){
-      return "Samiullah Ahmadzai is a Computer Science student and aspiring softwae engineer from Afghanistan. He is passionate about software development, web technologies, and artificial intelligence. He has been learning HTML, CSS, JavaScript, React, Python, SQL, and databases, and is continuously improving his programming and problem-solving skills. Sami is currently building an AI Study Assistant as a serious project to strengthen his practical development skills. His long-term goal is to become a highly skilled software engineer and build useful technology that can help students and people around him."
+    if (text.includes("sami")){
+      return "Sami  is a Computer Science student and aspiring softwae engineer from Afghanistan. He is passionate about software development, web technologies, and artificial intelligence. He has been learning HTML, CSS, JavaScript, React, Python, SQL, and databases, and is continuously improving his programming and problem-solving skills. Sami is currently building an AI Study Assistant as a serious project to strengthen his practical development skills. His long-term goal is to become a highly skilled software engineer and build useful technology that can help students and people around him."
     }
 
     if (text.includes("python")) {
