@@ -1,38 +1,15 @@
-
-/* ========================================
-   GLOBAL
-======================================== */
-
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  overflow: hidden;
-}
-
-
 /* ========================================
    MAIN CHAT LAYOUT
 ======================================== */
 
 .Chat-main {
   position: relative;
-
   width: 100%;
   height: 100vh;
   height: 100dvh;
-
   display: flex;
-
   background: #f7f8fa;
   color: #1f2937;
-
   font-family:
     Inter,
     -apple-system,
@@ -40,10 +17,9 @@ body {
     "Segoe UI",
     Arial,
     sans-serif;
-
   overflow: hidden;
+  box-sizing: border-box;
 }
-
 
 /* ========================================
    SIDEBAR
@@ -51,7 +27,6 @@ body {
 
 .side-bar {
   position: relative;
-
   width: 270px;
   height: 100vh;
   height: 100dvh;
@@ -60,11 +35,11 @@ body {
   flex-direction: column;
 
   flex-shrink: 0;
+  min-height: 0;
 
   box-sizing: border-box;
 
   background: #ffffff;
-
   border-right: 1px solid #e5e7eb;
 
   overflow: hidden;
@@ -76,15 +51,10 @@ body {
     transform 0.25s ease;
 }
 
-
-/* Desktop closed sidebar */
-
 .side-bar.closed {
   width: 0;
-
   border-right: none;
 }
-
 
 /* ========================================
    SIDEBAR HEADER
@@ -92,9 +62,9 @@ body {
 
 .sidebar-top {
   height: 70px;
+  min-height: 70px;
 
   padding: 0 18px;
-
   box-sizing: border-box;
 
   display: flex;
@@ -113,11 +83,9 @@ body {
   font-weight: 700;
 
   white-space: nowrap;
-
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 /* Close button */
 
@@ -131,7 +99,6 @@ body {
   border-radius: 8px;
 
   background: transparent;
-
   color: #6b7280;
 
   font-size: 20px;
@@ -153,7 +120,6 @@ body {
   background: #f3f4f6;
   color: #111827;
 }
-
 
 /* ========================================
    NEW CHAT
@@ -178,7 +144,6 @@ body {
   font-weight: 600;
 
   cursor: pointer;
-
   text-align: left;
 
   flex-shrink: 0;
@@ -192,22 +157,19 @@ body {
 
 .new-chat-btn:hover {
   background: #eff6ff;
-
   border-color: #bfdbfe;
-
   color: #2563eb;
 
   transform: translateY(-1px);
 }
 
-
 /* ========================================
    CHAT HISTORY
+   ONLY THIS AREA SCROLLS
 ======================================== */
 
 .chat-history {
   flex: 1;
-
   min-height: 0;
 
   padding: 0 10px 10px;
@@ -219,7 +181,6 @@ body {
 
   overscroll-behavior: contain;
 }
-
 
 /* Scrollbar */
 
@@ -233,10 +194,8 @@ body {
 
 .chat-history::-webkit-scrollbar-thumb {
   background: #d1d5db;
-
   border-radius: 10px;
 }
-
 
 /* No history */
 
@@ -249,14 +208,12 @@ body {
   line-height: 1.5;
 }
 
-
 /* History button */
 
 .history-item {
   width: 100%;
 
   margin-bottom: 4px;
-
   padding: 11px 12px;
 
   box-sizing: border-box;
@@ -265,7 +222,6 @@ body {
   border-radius: 8px;
 
   background: transparent;
-
   color: #4b5563;
 
   font-size: 14px;
@@ -275,7 +231,6 @@ body {
   cursor: pointer;
 
   white-space: nowrap;
-
   overflow: hidden;
   text-overflow: ellipsis;
 
@@ -291,15 +246,13 @@ body {
 
 .history-item.active {
   background: #eff6ff;
-
   color: #2563eb;
-
   font-weight: 600;
 }
 
-
 /* ========================================
-   SETTINGS BUTTON
+   SETTINGS
+   ALWAYS AT BOTTOM
 ======================================== */
 
 .settings-btn {
@@ -307,11 +260,9 @@ body {
   align-items: center;
 
   width: calc(100% - 24px);
-
   min-height: 45px;
 
   margin: 12px;
-
   padding: 12px 14px;
 
   box-sizing: border-box;
@@ -319,7 +270,6 @@ body {
   border-radius: 9px;
 
   background: #1d4ed8;
-
   color: white;
 
   text-decoration: none;
@@ -336,10 +286,8 @@ body {
 
 .settings-btn:hover {
   background: #2563eb;
-
   transform: translateY(-1px);
 }
-
 
 /* ========================================
    MOBILE OVERLAY
@@ -349,14 +297,12 @@ body {
   display: none;
 
   position: fixed;
-
   inset: 0;
 
   background: rgba(0, 0, 0, 0.45);
 
   z-index: 20;
 }
-
 
 /* ========================================
    CHAT AREA
@@ -366,6 +312,7 @@ body {
   flex: 1;
 
   min-width: 0;
+  min-height: 0;
 
   height: 100vh;
   height: 100dvh;
@@ -378,7 +325,6 @@ body {
   background: #f7f8fa;
 }
 
-
 /* ========================================
    CHAT HEADER
 ======================================== */
@@ -387,6 +333,7 @@ body {
   position: relative;
 
   height: 70px;
+  min-height: 70px;
 
   padding: 0 25px;
 
@@ -406,7 +353,6 @@ body {
   z-index: 10;
 }
 
-
 /* Hamburger */
 
 .menu-btn {
@@ -419,7 +365,6 @@ body {
   border-radius: 9px;
 
   background: transparent;
-
   color: #4b5563;
 
   font-size: 22px;
@@ -441,7 +386,6 @@ body {
   background: #f3f4f6;
   color: #111827;
 }
-
 
 /* Chat title */
 
@@ -471,11 +415,9 @@ body {
   font-size: 12px;
 
   white-space: nowrap;
-
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 /* ========================================
    MESSAGE AREA
@@ -498,9 +440,6 @@ body {
   scroll-behavior: smooth;
 }
 
-
-/* Scrollbar */
-
 .chat-messages::-webkit-scrollbar {
   width: 7px;
 }
@@ -511,10 +450,8 @@ body {
 
 .chat-messages::-webkit-scrollbar-thumb {
   background: #d1d5db;
-
   border-radius: 10px;
 }
-
 
 /* ========================================
    EMPTY CHAT
@@ -527,7 +464,6 @@ body {
   min-height: 100%;
 
   margin: 0 auto;
-
   padding: 30px;
 
   box-sizing: border-box;
@@ -578,7 +514,6 @@ body {
   line-height: 1.6;
 }
 
-
 /* ========================================
    MESSAGES CONTAINER
 ======================================== */
@@ -589,7 +524,6 @@ body {
 
   margin: 0 auto;
 }
-
 
 /* ========================================
    MESSAGE ROW
@@ -611,7 +545,6 @@ body {
   justify-content: flex-start;
 }
 
-
 /* ========================================
    MESSAGE BUBBLE
 ======================================== */
@@ -629,37 +562,26 @@ body {
   line-height: 1.55;
 
   overflow-wrap: anywhere;
-
   word-break: break-word;
 }
 
-
-/* User */
-
 .user-message {
   background: #2563eb;
-
   color: #ffffff;
 
   border-bottom-right-radius: 4px;
 }
 
-
-/* AI */
-
 .ai-message {
   background: #ffffff;
-
   color: #1f2937;
 
   border: 1px solid #e5e7eb;
 
   border-bottom-left-radius: 4px;
 
-  box-shadow:
-    0 2px 7px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
 }
-
 
 /* ========================================
    THINKING
@@ -667,8 +589,8 @@ body {
 
 .thinking {
   display: flex;
-  align-items: center;
 
+  align-items: center;
   gap: 5px;
 
   padding: 14px 16px;
@@ -702,17 +624,14 @@ body {
   60%,
   100% {
     transform: translateY(0);
-
     opacity: 0.4;
   }
 
   30% {
     transform: translateY(-4px);
-
     opacity: 1;
   }
 }
-
 
 /* ========================================
    INPUT AREA
@@ -731,9 +650,6 @@ body {
 
   z-index: 10;
 }
-
-
-/* Input wrapper */
 
 .input-box {
   width: 100%;
@@ -756,8 +672,7 @@ body {
 
   border-radius: 14px;
 
-  box-shadow:
-    0 3px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
 
   transition:
     border-color 0.2s ease,
@@ -771,9 +686,6 @@ body {
     0 0 0 3px rgba(37, 99, 235, 0.08),
     0 3px 12px rgba(0, 0, 0, 0.05);
 }
-
-
-/* Input */
 
 .input-box input {
   flex: 1;
@@ -800,12 +712,8 @@ body {
 
 .input-box input:disabled {
   cursor: not-allowed;
-
   opacity: 0.6;
 }
-
-
-/* Send */
 
 .send-btn {
   width: 42px;
@@ -814,11 +722,9 @@ body {
   padding: 0;
 
   border: none;
-
   border-radius: 10px;
 
   background: #2563eb;
-
   color: #ffffff;
 
   font-size: 18px;
@@ -838,18 +744,13 @@ body {
 
 .send-btn:hover:not(:disabled) {
   background: #1d4ed8;
-
   transform: translateY(-1px);
 }
 
 .send-btn:disabled {
   background: #bfdbfe;
-
   cursor: not-allowed;
 }
-
-
-/* Input note */
 
 .input-note {
   max-width: 850px;
@@ -861,10 +762,8 @@ body {
   color: #9ca3af;
 
   font-size: 11px;
-
   line-height: 1.4;
 }
-
 
 /* ========================================
    DARK MODE
@@ -872,16 +771,11 @@ body {
 
 .Chat-main.dark {
   background: #111827;
-
   color: #f9fafb;
 }
 
-
-/* Sidebar */
-
 .Chat-main.dark .side-bar {
   background: #1f2937;
-
   border-color: #374151;
 }
 
@@ -895,31 +789,20 @@ body {
 
 .Chat-main.dark .close-sidebar-btn:hover {
   background: #374151;
-
   color: #ffffff;
 }
 
-
-/* New chat */
-
 .Chat-main.dark .new-chat-btn {
   background: #273449;
-
   border-color: #374151;
-
   color: #f3f4f6;
 }
 
 .Chat-main.dark .new-chat-btn:hover {
   background: #374151;
-
   border-color: #4b5563;
-
   color: #93c5fd;
 }
-
-
-/* History */
 
 .Chat-main.dark .history-item {
   color: #d1d5db;
@@ -927,13 +810,11 @@ body {
 
 .Chat-main.dark .history-item:hover {
   background: #374151;
-
   color: #ffffff;
 }
 
 .Chat-main.dark .history-item.active {
   background: #1e3a5f;
-
   color: #93c5fd;
 }
 
@@ -941,28 +822,17 @@ body {
   color: #6b7280;
 }
 
-
-/* Settings */
-
 .Chat-main.dark .settings-btn {
   background: #2563eb;
-
   color: #ffffff;
 }
-
-
-/* Chat area */
 
 .Chat-main.dark .chat-area {
   background: #111827;
 }
 
-
-/* Header */
-
 .Chat-main.dark .chat-header {
   background: #1f2937;
-
   border-color: #374151;
 }
 
@@ -972,7 +842,6 @@ body {
 
 .Chat-main.dark .menu-btn:hover {
   background: #374151;
-
   color: #ffffff;
 }
 
@@ -983,9 +852,6 @@ body {
 .Chat-main.dark .chat-title span {
   color: #9ca3af;
 }
-
-
-/* Empty */
 
 .Chat-main.dark .empty-icon {
   background: #1e3a5f;
@@ -999,14 +865,9 @@ body {
   color: #9ca3af;
 }
 
-
-/* Messages */
-
 .Chat-main.dark .ai-message {
   background: #1f2937;
-
   border-color: #374151;
-
   color: #f3f4f6;
 }
 
@@ -1014,16 +875,12 @@ body {
   background: #4b5563;
 }
 
-
-/* Input */
-
 .Chat-main.dark .input-area {
   background: #111827;
 }
 
 .Chat-main.dark .input-box {
   background: #1f2937;
-
   border-color: #4b5563;
 }
 
@@ -1043,13 +900,11 @@ body {
   color: #6b7280;
 }
 
-
 /* ========================================
    TABLET
 ======================================== */
 
 @media (max-width: 900px) {
-
   .side-bar {
     width: 240px;
   }
@@ -1072,20 +927,15 @@ body {
   }
 }
 
-
 /* ========================================
    MOBILE
 ======================================== */
 
 @media (max-width: 600px) {
-
-  /* Main */
-
   .Chat-main {
     height: 100vh;
     height: 100dvh;
   }
-
 
   /* Sidebar */
 
@@ -1105,10 +955,10 @@ body {
 
     box-sizing: border-box;
 
-    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 
     overscroll-behavior: contain;
 
@@ -1116,10 +966,9 @@ body {
 
     box-shadow:
       8px 0 25px rgba(0, 0, 0, 0.12);
+
+    transform: translateX(0);
   }
-
-
-  /* Closed sidebar */
 
   .side-bar.closed {
     width: 285px;
@@ -1129,83 +978,56 @@ body {
     border-right: 1px solid #e5e7eb;
   }
 
-
-  /* Sidebar scrollbar */
-
-  .side-bar::-webkit-scrollbar {
-    width: 5px;
-  }
-
-  .side-bar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .side-bar::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-
-    border-radius: 10px;
-  }
-
-
-  /* Keep sidebar header visible */
+  /* Header stays fixed */
 
   .sidebar-top {
-    position: sticky;
-
-    top: 0;
-
     height: 70px;
+    min-height: 70px;
+
+    flex-shrink: 0;
 
     background: #ffffff;
 
     z-index: 2;
   }
 
-
   .Chat-main.dark .sidebar-top {
     background: #1f2937;
   }
 
-
-  /* New chat */
+  /* New Chat stays fixed */
 
   .new-chat-btn {
-    position: relative;
-
-    z-index: 1;
+    flex-shrink: 0;
   }
 
-
-  /* History */
+  /* IMPORTANT:
+     History is the only scrolling part */
 
   .chat-history {
-    flex: none;
-
+    flex: 1;
     min-height: 0;
 
-    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    overflow: visible;
+    padding-bottom: 10px;
   }
 
-
-  /* Settings */
+  /* Settings stays at bottom */
 
   .settings-btn {
-    position: sticky;
+    position: relative;
 
-    bottom: 12px;
+    flex-shrink: 0;
 
-    z-index: 3;
+    margin: 12px;
 
-    margin-top: 18px;
-
-    margin-bottom: 12px;
+    min-height: 45px;
 
     box-shadow:
       0 4px 12px rgba(0, 0, 0, 0.12);
   }
-
 
   /* Overlay */
 
@@ -1213,12 +1035,10 @@ body {
     display: block;
 
     position: fixed;
-
     inset: 0;
 
     z-index: 20;
   }
-
 
   /* Chat area */
 
@@ -1229,20 +1049,17 @@ body {
     height: 100dvh;
 
     min-width: 0;
+    min-height: 0;
 
     overflow: hidden;
   }
 
-
   /* Header */
 
   .chat-header {
-    position: sticky;
-
-    top: 0;
+    position: relative;
 
     height: 62px;
-
     min-height: 62px;
 
     padding: 0 14px;
@@ -1263,12 +1080,10 @@ body {
     font-size: 16px;
   }
 
-
   /* Messages */
 
   .chat-messages {
     flex: 1;
-
     min-height: 0;
 
     padding: 22px 14px;
@@ -1294,7 +1109,6 @@ body {
     border-radius: 13px;
   }
 
-
   /* Empty state */
 
   .empty-chat {
@@ -1316,12 +1130,9 @@ body {
     font-size: 14px;
   }
 
-
   /* Input */
 
   .input-area {
-    position: relative;
-
     width: 100%;
 
     padding: 8px 12px 13px;
@@ -1337,7 +1148,6 @@ body {
 
   .input-box input {
     height: 40px;
-
     font-size: 14px;
   }
 
@@ -1353,17 +1163,12 @@ body {
   }
 }
 
-
 /* ========================================
    SMALL PHONES
 ======================================== */
 
 @media (max-width: 380px) {
-
-  .side-bar {
-    width: 265px;
-  }
-
+  .side-bar,
   .side-bar.closed {
     width: 265px;
   }
@@ -1387,17 +1192,12 @@ body {
   }
 }
 
-
 /* ========================================
    VERY SMALL PHONES
 ======================================== */
 
 @media (max-width: 330px) {
-
-  .side-bar {
-    width: 250px;
-  }
-
+  .side-bar,
   .side-bar.closed {
     width: 250px;
   }
@@ -1421,4 +1221,3 @@ body {
     margin-right: 10px;
   }
 }
-

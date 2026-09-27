@@ -6,7 +6,10 @@
 .home {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
+
   padding: 48px 52px 70px;
+
   box-sizing: border-box;
 
   background: #f5f7fb;
