@@ -19,28 +19,31 @@ function Chat({
   const [isThinking, setIsThinking] = useState(false);
   const [selectedChat, setSelectedChat] = useState(null);
 
-  // Controls the sidebar
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   function getAIResponse(message) {
     const text = message.toLowerCase();
-    if (text.includes("abdurhman" )){
-      return "he is from afg and live paktia province and he is play cricket and is in paktia univercity and some thing mor about he ";
+
+    if (text.includes("abdurhman")) {
+      return "He is from Afghanistan and lives in Paktia province. He plays cricket and studies at Paktia University.";
     }
-    if(text.includes("majeed")){
-      return "he is your classmate "
+
+    if (text.includes("majeed")) {
+      return "He is your classmate.";
     }
 
     if (text.includes("react")) {
       return "React is a JavaScript library for building user interfaces.";
     }
-    if (text.includes("sami")){
-      return "Sami  is a Computer Science student and aspiring softwae engineer from Afghanistan. He is passionate about software development, web technologies, and artificial intelligence. He has been learning HTML, CSS, JavaScript, React, Python, SQL, and databases, and is continuously improving his programming and problem-solving skills. Sami is currently building an AI Study Assistant as a serious project to strengthen his practical development skills. His long-term goal is to become a highly skilled software engineer and build useful technology that can help students and people around him."
+
+    if (text.includes("sami")) {
+      return "Sami is a Computer Science student and aspiring software engineer from Afghanistan. He is passionate about software development, web technologies, and artificial intelligence. He has been learning HTML, CSS, JavaScript, React, Python, SQL, and databases, and is continuously improving his programming and problem-solving skills. Sami is currently building an AI Study Assistant as a serious project to strengthen his practical development skills. His long-term goal is to become a highly skilled software engineer and build useful technology that can help students and people around him.";
     }
 
     if (text.includes("python")) {
       return "Python is a high-level programming language.";
     }
+
     if (text.includes("javascript")) {
       return "JavaScript is a programming language used in browsers and on servers.";
     }
@@ -56,8 +59,8 @@ function Chat({
     const userMessage = message.trim();
     const aiResponse = getAIResponse(userMessage);
 
-    // Add user's message
-    setMessages((prevMessages) => [...prevMessages,
+    setMessages((prevMessages) => [
+      ...prevMessages,
       {
         text: userMessage,
         sender: "user"
@@ -67,7 +70,6 @@ function Chat({
     setMessage("");
     setIsThinking(true);
 
-    // Simulate AI thinking
     setTimeout(() => {
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -137,7 +139,6 @@ function Chat({
           <button
             className="close-sidebar-btn"
             onClick={() => setSidebarOpen(false)}
-            // aria-label="Close sidebar"
           >
             ✕
           </button>
@@ -160,7 +161,7 @@ function Chat({
           {chatHistory.length === 0 ? (
 
             <p className="no-history">
-             {translations[language].noHistory}
+              {translations[language].noHistory}
             </p>
 
           ) : (
@@ -225,7 +226,9 @@ function Chat({
 
           <div className="chat-title">
 
-            <h3>{translations[language].chatTitle}</h3>
+            <h3>
+              {translations[language].chatTitle}
+            </h3>
 
             {subject && (
               <span>{subject}</span>
@@ -322,7 +325,9 @@ function Chat({
             <input
               type="text"
               value={message}
-              placeholder={translations[language].askAnything}
+              placeholder={
+                translations[language].askAnything
+              }
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
